@@ -38,7 +38,9 @@ variable "tls" {
 }
 variable "ingress_annotations" {
   description = "(Optional) Set addional annontations for ingress"
-  default = null
+  default = {
+    "kubernetes.io/ingress.class" = "nginx"
+  }
 }
 variable "image_tag" {
   description = "(Optional) Docker image tag for jenkins/jenkins"
